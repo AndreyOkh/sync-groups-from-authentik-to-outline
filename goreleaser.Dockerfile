@@ -1,5 +1,4 @@
 FROM scratch
 WORKDIR /app
-COPY exchange-log-viewer .
-COPY ./public public/
-ENTRYPOINT ["/app/exchange-log-viewer"]
+COPY sync-groups-from-authentik-to-outline .
+ENTRYPOINT ["/app/sync-groups-from-authentik-to-outline"]
