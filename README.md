@@ -1,0 +1,1 @@
+# Sync groups from Authentik to Outline
