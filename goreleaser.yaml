@@ -36,5 +36,5 @@ release:
     * `andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}.{{ .Patch }}`
 
 archives:
-    files:
+    - files:
       - none*
