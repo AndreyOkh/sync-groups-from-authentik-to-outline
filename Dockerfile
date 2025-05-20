@@ -13,5 +13,4 @@ FROM scratch
 LABEL authors="okhotnikov"
 WORKDIR /app
 COPY --from=build ["/build/sync-groups-from-authentik-to-outline", "."]
-COPY ./public public/
 ENTRYPOINT ["/app/sync-groups-from-authentik-to-outline"]
