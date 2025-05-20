@@ -1,6 +1,6 @@
 version: 2
 
-project_name: group-sync-from-authentik-to-outline
+project_name: sync-groups-from-authentik-to-outline
 
 builds:
   - env: [CGO_ENABLED=0]
