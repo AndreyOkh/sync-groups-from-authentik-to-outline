@@ -1,0 +1,42 @@
+version: 2
+
+project_name: group-sync-from-authentik-to-outline
+
+builds:
+  - env: [CGO_ENABLED=0]
+    goos:
+      - linux
+    goarch:
+      - amd64
+    main: .
+
+dockers:
+  - image_templates:
+      - "andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
+      - "andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}"
+#      - "andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}"
+      - "andreyokh/sync-groups-from-authentik-to-outline:latest"
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - --label=org.opencontainers.image.title={{ .ProjectName }}
+      - --label=org.opencontainers.image.description={{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/AndreyOkh/sync-groups-from-authentik-to-outline
+      - --label=org.opencontainers.image.source=https://github.com/AndreyOkh/sync-groups-from-authentik-to-outline
+      - --label=org.opencontainers.image.version={{ .Version }}
+      - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
+      - --label=org.opencontainers.image.revision={{ .FullCommit }}
+
+dockerhub:
+  username: "andreyokh"
+  full_description:
+    from_file:
+      path: ./README.md
+
+release:
+  header: |
+    ## Docker images
+    * `andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}.{{ .Patch }}`
+
+archives:
+    files:
+      - none*
