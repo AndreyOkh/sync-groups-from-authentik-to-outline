@@ -14,7 +14,7 @@ dockers:
   - image_templates:
       - "andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
       - "andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}"
-#      - "andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}"
+      - "andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}"
       - "andreyokh/sync-groups-from-authentik-to-outline:latest"
     dockerfile: goreleaser.Dockerfile
     build_flag_templates:
@@ -26,15 +26,13 @@ dockers:
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
 
-#dockerhub:
-#  - username: "andreyokh"
-#    secret_name: DOCKER_TOKEN
-
 release:
   header: |
     ## Docker images
-    * `andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}.{{ .Patch }}`
+    * `docker pull andreyokh/sync-groups-from-authentik-to-outline:latest`
+    * `docker pull andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}`
+    * `docker pull andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}`
+    * `docker pull andreyokh/sync-groups-from-authentik-to-outline:{{ .Major }}.{{ .Minor }}.{{ .Patch }}`
 
 archives:
-    - files:
-      - none*
+    - format: binary
