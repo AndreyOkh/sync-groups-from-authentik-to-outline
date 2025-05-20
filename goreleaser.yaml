@@ -29,9 +29,6 @@ dockers:
 dockerhub:
   - username: "andreyokh"
     secret_name: DOCKER_TOKEN
-    full_description:
-      from_file:
-        path: ./README.md
 
 release:
   header: |
