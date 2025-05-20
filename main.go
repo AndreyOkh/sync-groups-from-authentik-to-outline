@@ -3,12 +3,12 @@ package main
 import (
 	"flag"
 	"goauthentik.io/api/v3"
-	"group-sync-from-authentik-to-outline/authentik"
-	"group-sync-from-authentik-to-outline/config"
-	"group-sync-from-authentik-to-outline/outline"
-	"group-sync-from-authentik-to-outline/web"
 	"log"
 	"os"
+	"sync-groups-from-authentik-to-outline/authentik"
+	"sync-groups-from-authentik-to-outline/config"
+	"sync-groups-from-authentik-to-outline/outline"
+	"sync-groups-from-authentik-to-outline/web"
 )
 
 type Group struct {

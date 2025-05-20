@@ -3,11 +3,11 @@ package web
 import (
 	"encoding/json"
 	"fmt"
-	"group-sync-from-authentik-to-outline/authentik"
-	"group-sync-from-authentik-to-outline/outline"
 	"io"
 	"log"
 	"net/http"
+	"sync-groups-from-authentik-to-outline/authentik"
+	"sync-groups-from-authentik-to-outline/outline"
 )
 
 type Handler struct {

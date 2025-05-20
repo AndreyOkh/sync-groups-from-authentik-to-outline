@@ -1,4 +1,4 @@
-module group-sync-from-authentik-to-outline
+module sync-groups-from-authentik-to-outline
 
 go 1.24
 
