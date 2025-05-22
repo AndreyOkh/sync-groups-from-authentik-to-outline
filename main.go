@@ -146,16 +146,16 @@ func ForceResync(conf *config.Conf, outlineClient *outline.Client, authentikClie
 		for _, user := range diff {
 			id, ok, err := outlineClient.ListUsers(user)
 			if err != nil {
-				log.Printf("error listing users: %v\n", err)
+				log.Printf("error listing users from outline: %v\n", err)
 				continue
 			}
 			if !ok {
-				log.Printf("error listing user: %s not found\n", user)
+				log.Printf("error listing user from outline: %s not found\n", user)
 				continue
 			}
 			err = outlineClient.AddGroupMember(groupId, id.Data[0].Id)
 			if err != nil {
-				log.Printf("error adding group member: %v\n", err)
+				log.Printf("error adding group member to outline: %v\n", err)
 			}
 		}
 

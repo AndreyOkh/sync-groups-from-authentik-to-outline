@@ -1,7 +1,5 @@
 package outline
 
-// ol_api_ckcvWSsppU10MnXfYVbfR1EC5dXwTWKzOOzxGY
-
 import (
 	"bytes"
 	"encoding/json"
